@@ -68,7 +68,6 @@ public class Article extends DomainEntity {
 			this.publicationDate = publicationDate;
 		}
 
-		@URL
 		@ElementCollection
 		public Collection<String> getPictures() {
 			return pictures;

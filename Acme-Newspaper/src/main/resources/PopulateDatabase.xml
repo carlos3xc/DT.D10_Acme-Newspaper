@@ -18,7 +18,7 @@
 	
 	<!-- User accounts -->
 
-	<bean id="userAccount1" class="security.UserAccount">
+	<bean id="userAccountAdmin" class="security.UserAccount">
 		<property name="username" value="admin" />
 		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
 		<property name="authorities">
@@ -30,33 +30,338 @@
 		</property>
 	</bean>
 
-	<bean id="userAccount2" class="security.UserAccount">
-		<property name="username" value="customer" />
-		<property name="password" value="91ec1f9324753048c0096d036a694f86" />
+	<bean id="userAccountUser1" class="security.UserAccount">
+		<property name="username" value="user1" />
+		<property name="password" value="24c9e15e52afc47c225b757e7bee1f9d" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="CUSTOMER" />
+					<property name="authority" value="USER" />
 				</bean>
 			</list>
 		</property>
 	</bean>
 
-	<bean id="userAccount3" class="security.UserAccount">
-		<property name="username" value="super" />
-		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
+	<bean id="userAccountUser2" class="security.UserAccount">
+		<property name="username" value="user2" />
+		<property name="password" value="7e58d63b60197ceb55a1c487989a3720" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
-					<property name="authority" value="ADMIN" />
-				</bean>
-				<bean class="security.Authority">
-					<property name="authority" value="CUSTOMER" />
+					<property name="authority" value="USER" />
 				</bean>
 			</list>
 		</property>
 	</bean>
 	
-	<!-- Other domain beans come here -->	
+	<bean id="userAccountUser3" class="security.UserAccount">
+		<property name="username" value="user3" />
+		<property name="password" value="92877af70a45fd6a2ed7fe81e1236b78" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccountUser4" class="security.UserAccount">
+		<property name="username" value="user4" />
+		<property name="password" value="3f02ebe3d7929b091e3d8ccfde2f3bc6" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Actors -->
+
+	<bean id="admin" class="domain.Administrator">
+		<property name="name" value="Enrique" />
+		<property name="surname" value="Parra" />
+		<property name="email" value="enriquep@gmail.com" />
+		<property name="phoneNumber" value="667855442" />
+		<property name="postalAddress" value="c/ Manuel Siurot 16, Sevilla" />
+		<property name="userAccount" ref="userAccountAdmin" />
+	</bean>
+	
+		<!-- ARTICLE -->
+	<bean id="article1" class="domain.Article">
+		<property name="title" value="Article 1" />
+		<property name="summary" value="Summary article 1" />
+		<property name="text" value="Text article 1" />
+		<property name="publicationDate" value="2018/05/03 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>
+	
+	<bean id="article2" class="domain.Article">
+		<property name="title" value="Article 2" />
+		<property name="summary" value="Summary article 2" />
+		<property name="text" value="Text article 2" />
+		<property name="publicationDate" value="2018/05/04 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article3" class="domain.Article">
+		<property name="title" value="Article 3" />
+		<property name="summary" value="Summary article 3" />
+		<property name="text" value="Text article 3" />
+		<property name="publicationDate" value="2018/05/05 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article4" class="domain.Article">
+		<property name="title" value="Article 4" />
+		<property name="summary" value="Summary article 4" />
+		<property name="text" value="Text article 4" />
+		<property name="publicationDate" value="2018/05/06 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="true"/>
+	</bean>	
+	
+	<bean id="article5" class="domain.Article">
+		<property name="title" value="Article 5" />
+		<property name="summary" value="Summary article 5" />
+		<property name="text" value="Text article 5" />
+		<property name="publicationDate" value="2018/05/07 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article6" class="domain.Article">
+		<property name="title" value="Article 6" />
+		<property name="summary" value="Summary article 6" />
+		<property name="text" value="Text article 6" />
+		<property name="publicationDate" value="2018/05/08 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article7" class="domain.Article">
+		<property name="title" value="Article 7" />
+		<property name="summary" value="Summary article 7" />
+		<property name="text" value="Text article 7" />
+		<property name="publicationDate" value="2018/05/09 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="true"/>
+	</bean>	
+	
+	<bean id="article8" class="domain.Article">
+		<property name="title" value="Article 8" />
+		<property name="summary" value="Summary article 8" />
+		<property name="text" value="Text article 8" />
+		<property name="publicationDate" value="2018/05/10 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article9" class="domain.Article">
+		<property name="title" value="Article 9" />
+		<property name="summary" value="Summary article 9" />
+		<property name="text" value="Text article 9" />
+		<property name="publicationDate" value="2018/05/11 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="false"/>
+	</bean>	
+	
+	<bean id="article10" class="domain.Article">
+		<property name="title" value="Article 10" />
+		<property name="summary" value="Summary article 10" />
+		<property name="text" value="Text article 10" />
+		<property name="publicationDate" value="2018/05/12 16:00"/>
+		<property name="pictures">
+			<value>http://www.google.com</value>
+		</property>
+		<property name="isDraft" value="true"/>
+	</bean>	
+	
+		<!-- NEWSPAPER -->
+	
+	<bean id="newspaper1" class="domain.Newspaper">
+		<property name="title" value="Newspaper 1" />
+		<property name="description" value="Description newspaper 1" />
+		<property name="publicationDate" value="2018/05/03 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article1"/>
+				<ref bean="article2"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="newspaper2" class="domain.Newspaper">
+		<property name="title" value="Newspaper 2" />
+		<property name="description" value="Description newspaper 2" />
+		<property name="publicationDate" value="2018/05/04 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article3"/>
+				<ref bean="article4"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="newspaper3" class="domain.Newspaper">
+		<property name="title" value="Newspaper 3" />
+		<property name="description" value="Description newspaper 3" />
+		<property name="publicationDate" value="2018/05/05 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article5"/>
+				<ref bean="article6"/>
+				<ref bean="article7"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="newspaper4" class="domain.Newspaper">
+		<property name="title" value="Newspaper 4" />
+		<property name="description" value="Description newspaper 4" />
+		<property name="publicationDate" value="2018/05/06 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article8"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="newspaper5" class="domain.Newspaper">
+		<property name="title" value="Newspaper 5" />
+		<property name="description" value="Description newspaper 5" />
+		<property name="publicationDate" value="2018/05/07 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article9"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="newspaper6" class="domain.Newspaper">
+		<property name="title" value="Newspaper 6" />
+		<property name="description" value="Description newspaper 6" />
+		<property name="publicationDate" value="2018/05/08 16:00"/>
+		<property name="picture" value="http://www.google.com" />
+		<property name="articles">
+			<list>
+				<ref bean="article10"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user1" class="domain.User">
+		<property name="name" value="Juan" />
+		<property name="surname" value="García" />
+		<property name="email" value="juang@gmail.com" />
+		<property name="phoneNumber" value="655998787" />
+		<property name="postalAddress" value="c/ Cardenal Bueno Montreal 15, Sevilla" />
+		<property name="userAccount" ref="userAccountUser1" />
+ 		<property name="newspapers">
+			<list>
+				<ref bean="newspaper1" />
+				<ref bean="newspaper2" />
+			</list>
+		</property>
+		<property name="articles"> 
+			<list>
+				<ref bean="article1" />
+				<ref bean="article2" />
+				<ref bean="article3" />
+			</list>
+		</property> 
+	</bean>
+
+	<bean id="user2" class="domain.User">
+		<property name="name" value="Rosa" />
+		<property name="surname" value="Díaz" />
+		<property name="email" value="rosad@gmail.com" />
+		<property name="phoneNumber" value="665876464" />
+		<property name="postalAddress" value="Avenida Reina Mercedes 4, Sevilla" />
+		<property name="userAccount" ref="userAccountUser2" />	
+	 	<property name="newspapers">
+			<list>
+				<ref bean="newspaper3" />
+				<ref bean="newspaper4" />
+			</list>
+		</property>
+		<property name="articles"> 
+			<list>
+				<ref bean="article4" />
+				<ref bean="article5" />
+				<ref bean="article6" />
+				<ref bean="article7" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="user3" class="domain.User">
+		<property name="name" value="Cristina" />
+		<property name="surname" value="Gutiérrez" />
+		<property name="email" value="cristinag@gmail.com" />
+		<property name="phoneNumber" value="655998787" />
+		<property name="postalAddress" value="c/ Padre García Tejero 7, Sevilla" />
+		<property name="userAccount" ref="userAccountUser3" />
+ 		<property name="newspapers">
+			<list>
+				<ref bean="newspaper5" />
+			</list>
+		</property>
+		<property name="articles"> 
+			<list>
+				<ref bean="article8" />
+			</list>
+		</property> 
+	</bean>
+	
+	<bean id="user4" class="domain.User">
+		<property name="name" value="Manuel" />
+		<property name="surname" value="Tenorio" />
+		<property name="email" value="manuelt@gmail.com" />
+		<property name="phoneNumber" value="655998787" />
+		<property name="postalAddress" value="c/ Sor Gregoria Santa Teresa 9, Sevilla" />
+		<property name="userAccount" ref="userAccountUser4" />
+ 		<property name="newspapers">
+			<list>
+				<ref bean="newspaper6" />
+			</list>
+		</property>
+		<property name="articles"> 
+			<list>
+				<ref bean="article9" />
+				<ref bean="article10" />
+			</list>
+		</property> 
+	</bean>
+	
+	
 	
 </beans>

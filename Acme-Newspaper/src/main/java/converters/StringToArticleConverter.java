@@ -11,7 +11,7 @@ import domain.Article;
 
 @Component
 @Transactional
-public class StringToAnnouncementConverter implements Converter<String, Article> {
+public class StringToArticleConverter implements Converter<String, Article> {
 
 	@Autowired
 	ArticleRepository articleRepository;

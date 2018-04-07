@@ -1,5 +1,5 @@
 <%--
- * textarea.tag
+ * statistics.tag
  *
  * Copyright (C) 2017 Universidad de Sevilla
  * 
@@ -7,10 +7,10 @@
  * TDG Licence, a copy of which you may download from 
  * http://www.tdg-seville.info/License.html
  --%>
-
+ 
 <%@ tag language="java" body-content="empty" %>
-
-<%-- Taglibs --%>
+ 
+ <%-- Taglibs --%>
 
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -21,21 +21,23 @@
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags" %>
 
 <%-- Attributes --%> 
+ 
+<%@ attribute name="titleCode" required="true" %>
+<%@ attribute name="code1" required="true" %>
+<%@ attribute name="data1" required="true" %>
+<%@ attribute name="code2" required="false" %>
+<%@ attribute name="data2" required="false" %>
 
-<%@ attribute name="path" required="true" %>
-<%@ attribute name="code" required="true" %>
-<%@ attribute name="readonly" required="false" %>
 
-<jstl:if test="${readonly == null}">
-	<jstl:set var="readonly" value="false" />
+
+<%-- Definition --%>  
+<h3>
+	<spring:message code="${titleCode}"/>	
+</h3>
+
+<acme:property code="${code1}" data="${data1}"/>
+
+<jstl:if test="${(code2!=null) && (code2!=null)}">
+	<acme:property code="${code2}" data="${data2}"/>
 </jstl:if>
 
-<%-- Definition --%>
-
-<div class="form-group">
-	<form:label path="${path}">
-		<spring:message code="${code}" />
-	</form:label>
-	<form:textarea path="${path}" readonly="${readonly}" />
-	<form:errors path="${path}" cssClass="error" />
-</div>
